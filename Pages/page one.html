@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Bokor&family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&family=Hind:wght@300;400;500;600;700&family=Lunasima:wght@400;700&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Squada+One&family=Uchen&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Mona Sans", serif;
+        }
+        .main{
+            width: 100%;
+            min-height: 100vh;
+            background-image: url(/multimedia/images/bg-darkest--wide@2x-3a969c95af5f.jpeg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+        }
+        .child{
+            width: 50%;
+            position: relative;
+        }
+        .child:nth-child(2){
+            background-color: white;
+        }
+        .child1{
+            width: 50%;
+            /* margin: auto; */
+            background-color: none;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            gap: 10rem;
+            color: white;
+            /* height: 100vh; */
+        }
+        .free{
+            width: 60%;
+            margin: auto;
+            position: relative;
+        }
+        .free h3{
+            margin-bottom: 1rem;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        .free span{
+            font-size: 14px;
+        }
+        .img{
+            width: 70%;
+            margin: auto;
+        }
+        .img img{
+            width: 100%;
+            margin: auto;
+            height: 100%;
+        }
+        .img1{
+            width: 70%;
+            margin: auto;
+            display: none;
+        }
+        .img1 img{
+            width: 80%;
+            margin: auto;
+            height: 100%;
+        }
+        .img2{
+            width: 10%;
+            bottom: 0%;
+            left: 45%;
+            margin: auto;
+            position: absolute;
+            display: none;
+        }
+        .img2 img{
+            width: 100%;
+            margin: auto;
+            /* height: 100%; */
+        }
+        button{
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            display: block;
+            margin-top: 1rem;
+            background-color: black;
+            color: white;
+            border: none;
+            width: 60%;
+            text-align: left;
+            padding-top: 0rem;
+        }
+        .drop{
+            position: absolute;
+            font-size: 14px;
+            padding-top: .5rem;
+        }
+        .drop ul{
+            list-style: none;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            margin-top: .5rem;
+            gap: .5rem;
+            position: relative;
+        }
+        .drop ul::before{
+            content: '';
+            background-image: url(/multimedia/icons/check-solid.svg);
+            width: 15px;
+            height: 15px;
+            /* background-color: white; */
+            border-radius: 50%;
+            position: absolute;
+            left: -2rem;
+
+        }
+        button:focus .drop{
+            display: none;
+        }
+        button:focus::after .drop{
+            display: block;
+        }
+        .drop ul li{
+            line-height: 1.2rem;
+        }
+    
+        .acc{
+            float: right;
+            padding: 1.5rem 1rem;
+            padding-right: 2rem;
+            color: black;
+        }
+        .acc:nth-child(2){
+            float: right;
+            padding: 1.5rem 1rem;
+            padding-right: 2rem;
+        }
+        .act{
+            /* float: left; */
+            color: white;
+            display: none;
+            padding: 1.5rem 1rem;
+            padding-left: 2rem;
+        }
+        .sign{
+            width: 50%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 10rem;
+        }
+        .inp{
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+            width: 100%;
+        }
+        .inp input{
+            padding: .5rem;
+            border-radius: .5rem;
+            border: thin solid black;
+            outline: none;
+        }
+        .anch{
+            width: 100%;
+        }
+        .anch a{
+            width: 100%;
+            display: inline-block;
+            background-color: rgb(41, 38, 38);
+            color: white;
+            font-size: 17px;
+            letter-spacing: 0.7px;
+            text-decoration: none;
+            text-align: center;
+            padding: 1rem 0rem;
+            border-radius: .5rem;
+        }
+        .anch a:hover{
+            background-color: rgb(61, 57, 57);
+            transition: .2s;
+        }
+        .git{
+            width: 100%;
+        }
+        .git p{
+            font-size: 13px;
+            letter-spacing: 0.7px;
+        }
+        .git a{
+            color: #0969DA;
+        }
+
+
+        @media (max-width: 1330px) {
+            .child{
+                width: 50%;
+            }
+            .sign{
+                width: 70%;
+            }
+            .free{
+                width: 70%;
+            }
+            .img1{
+                display: block;
+            }
+            .img{
+                display: none;
+            }
+        }
+        @media (max-width: 1000px) {
+            .main{
+                flex-direction: column;
+            }
+            .child{
+                width: 100%;
+            }
+            .child1{
+                width: 100%;
+                gap: 1rem;
+                padding: 1rem;
+                /* min-height: 100vh; */
+            }
+            .acc{
+                display: none;
+            }
+            .act{
+                display: block;
+            }
+            .img1{
+                display: none;
+            }
+            .img2{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <div class="child1">
+                <div class="act">
+                    <span>Already have an account? </span>
+                    <a href="">Sign in →</a>
+                </div>
+                <div class="free">
+                    <h3>Create your free account</h3>
+                    <span>Explore GitHub's core features for individuals and organizations.</span>
+                    <button> See what's included <i class="fa-solid fa-chevron-down fa-2xs"></i>
+                         <div class="drop">
+                            <ul>
+                                <li>Access to GitHub Copilot</li>
+                                <li>Increase your productivity and accelerate software development.</li>
+                            </ul>
+                            <ul>
+                                <li>Unlimited repositories
+                                    </li>
+                                <li>Collaborate securely on public and private projects.</li>
+                            </ul>
+                            <ul>
+                                <li>Integrated code reviews
+                                    </li>
+                                <li>Boost code quality with built-in review tools.</li>
+                            </ul>
+                            <ul>
+                                <li>Automated workflows
+                                    </li>
+                                <li>Save time with CI/CD integrations and GitHub Actions.</li>
+                            </ul>
+                            <ul>
+                                <li>Community support
+                                    </li>
+                                <li>Connect with developers worldwide for instant feedback and insights.</li>
+                            </ul>
+                         </div>
+                    </button>
+                </div>
+                <div class="img">
+                    <img src="/multimedia/images/baby.png" alt="">
+                </div>
+                <div class="img1">
+                    <img src="/multimedia/images/dos-amigos@2x-5f31ce5f49b4.webp" alt="">
+                </div>
+                <div class="img2">
+                    <img src="/multimedia/images/mona_glow@2x-f8d271ee4b80.webp" alt="">
+                </div>
+            </div>
+            <div class="child">
+                <div class="acc">
+                    <span>Already have an account? </span>
+                    <a href="">Sign in →</a>
+                </div>
+
+                <div class="sign">
+                    <h3>Sign up to GitHub</h3>
+                    <div class="inp">
+                        <label for="Email">Email</label>
+                        <input type="email" id="Email" placeholder="Email">
+                        <small></small>
+                    </div>
+                    <div class="inp">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password">
+                        <small>Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter.</small>
+                    </div>
+                    <div class="inp">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Username">
+                        <small>Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.
+                        </small>
+                    </div>
+                    <div class="anch">
+                        <a href="">Continue ></a>
+                    </div>
+                    <div class="git">
+                        <p>By creating an account, you agree to the <a href="">Terms of Service.</a> For more information about GitHub's privacy practices, see the <a href="">GitHub Privacy Statement.</a> We'll occasionally send you account-related emails.</p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

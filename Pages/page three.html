@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub AI Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Bokor&family=Dancing+Script:wght@400..700&family=Doto:wght@100..900&family=Hind:wght@300;400;500;600;700&family=Lunasima:wght@400;700&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Squada+One&family=Uchen&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            font-family: "Mona Sans", serif
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color:  #586069;
+        }
+
+        /* First Section */
+        .first-section {
+            /* display: flex; */
+            width: 100%;
+            /* gap: 30px; */
+            padding: 40px 20px;
+            background-color: #f6f8fa;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            /* float: right; */
+            /* flex-direction: column; */
+            /* align-items: flex-start; */
+            width: 80%;
+            
+            
+        }
+
+        /* Left Content */
+        .left-content {
+            width: 30%;
+            /* margin: auto; */
+            /* margin-left: 300px; */
+            /* top: -1000px; */
+        }
+
+        .left-content h1 {
+            font-size: 72px;
+            margin-top:6px;
+        }
+
+        .left-content hr {
+            border: 0;
+            border-top: 1px solid #e1e4e8;
+            width:300px;
+            margin-left: -5px;
+            margin-bottom: 30px;
+        }
+
+        .left-content .menu-list {
+            margin-bottom: 20px;
+        }
+
+        .left-content .menu-list li {
+            font-size: 16px;
+            padding: 5px 0;
+            color: #586069;
+            transition: color 0.3s;
+        }
+
+        .left-content .menu-list li a:hover {
+            width: 50px;
+            height:30px;
+            color:#24292e;
+            border-radius: 9px;
+        }
+
+        .left-content p {
+            font-size: 14px;
+            color: #586069;
+        }
+
+        /* Right Content */
+        .right-content {
+            width: 100%;
+            /* margin-right: 700px; */
+            margin-top: 300px;
+        }
+
+        .flex-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .flex-item {
+            width: 100%;
+            text-align: left;
+            /* background-color: white; */
+            /* border: 1px solid #e1e4e8; */
+            border-radius: 6px;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .flex-item img {
+            width: 100%;
+            /* height: 250px; */
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .flex-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .flex-item p {
+            font-size: 16px;
+            color: #586069;
+            margin-bottom: 10px;
+        }
+
+        .flex-item a {
+            font-size: 16px;
+            display: inline-block;
+            color: #0366d6;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .flex-item a:hover {
+            color: #005cc5;
+            
+        }
+
+        .flex-item a:hover::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            transition: right 0.3s ease;
+            color: #005cc5;
+        }
+
+        /* Section Divider */
+       .section-divider {
+        
+            border: 0;
+            border-top: 1px solid #e1e4e8;
+            width:300px;
+            margin-left: -5px;
+            margin-bottom: 30px;
+            
+        }
+
+        /* Second Section */
+        .feature-list-section {
+            display: flex;
+            width: 100%;
+            gap: 30px;
+            padding: 50px 20px;
+            background-color: #f6f8fa;
+        }
+
+        .feature-list-section .container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* flex-direction: column; */
+            
+        }
+
+        .left-content {
+            width: 40%;
+            margin: auto;
+            /* left: 10px; */
+            margin-top: 5px;
+        
+        }
+
+        .left-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left-content p {
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: #586069;
+        }
+
+        .subscribe-btn {
+            padding: 15px 30px;
+            background-color: none;
+            color: black;
+            border: thin solid silver;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #005cc5;
+        }
+
+        .right-content {
+            width: 70%;
+            /* margin-left: 40px; */
+            display: flex;
+            
+        }
+
+        .flex-list {
+            display: flex;
+            gap: 100px;
+            /* margin-top: -200px; */
+            width: 100%;
+            /* left:300px; */
+        }
+
+        .flex-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+        }
+
+        .flex-list li {
+            font-size: 14px;
+            padding: 5px 0;
+            color: #586069;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgb(236, 233, 233);
+            /* background-color: rgb(167, 24, 24); */
+            color: rgb(117, 112, 112);
+            padding: 30px 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .container1{
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            /* flex-wrap: wrap; */
+            width: 100%;
+            /* overflow: hidden; */
+            
+        }
+        .flex-item:hover{
+       transform:scale(105%) ;
+       transition: 0.5s ease-in-out;
+    }
+
+
+        .flexed-items {
+            display: flex;
+            width: 100%;
+            font-size: 10px;
+            gap: 10px;
+        }
+
+        .flexed-items p {
+           
+            font-size: 12px;
+            margin: 0;
+        }
+        .social-media{
+            width: 100%;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+        }
+
+        .social-media img {
+            width: 15px;
+            height: 20px;
+            /* border-radius: 50%; */
+            transition: transform 0.3s;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+      /* Default styles for large screens */
+body {
+  font-size: 16px;
+}
+
+/* Styles for tablets */
+@media (max-width: 990px) {
+  body {
+    font-size: 14px;
+  }
+  .first-section{
+    /* flex-direction: column; */
+  }
+  .container{
+    width: 100%;
+    flex-direction: column;
+  }
+  .header{
+    width: 100%;
+  }
+  .feature-list-section{
+    width: 100%;
+    display: inline-block;
+    
+  }
+  .right-content{
+    width: 100%;
+  }
+  .left-content{
+    width: 100%;
+  }
+  .menu-list{
+    width: 100%;
+  }
+  .flex-grid{
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    justify-content: center;
+  }
+  .flex-item{
+    width: 100%;
+    
+  }
+
+  .flex-list{
+    flex-direction: column;
+  }
+
+
+  .footer-content{
+    flex-direction: column;
+  }
+  .flexed-items{
+    flex-wrap: wrap;
+  }
+}
+
+/* Styles for phones */
+@media (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <!-- First Section -->
+    <section class="first-section">
+        <div class="container">
+            <!-- Left Section -->
+            <div class="left-content">
+                <h1>AI</h1>
+                <!-- <hr> -->
+                <p>TOPICS</p>
+                <ul class="menu-list">
+                    <li><a href="#">All Topics</a></li>
+                    <li><a href="#">AI</a></li>
+                    <li><a href="#">DevOps</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Software Development</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-content">
+                <div class="flex-grid">
+                    <div class="flex-item">
+                        <img src="../multimedia/images/md.webp" alt="Item Image">
+                        <h3>Natural language processing (NLP) in software development</h3>
+                        <p>Learn why natural language processing (NLP) is becoming an indespensable tool for developers.</p>
+                        <a href="#">Learn More &gt;</a>
+                        </div>
+                        <div class="flex-item">
+                            <img src="../multimedia/images/md.webp" alt="Item Image">
+                            <h3>What are AI agents?</h3>
+                            <p>Discover how AI transform software development by automating workflows and enhancing security.
+                                Explore the different types of AI agents, learn how they integrate into development environments, and see real-world examples of their impact. Learn best practices for using AI agents and get a glimpse into the future of AI in development and security.</p>
+                            <a href="#">Learn more &gt;</a>
+                    </div>
+                    
+                    <div class="flex-item">
+                        <img src="../multimedia/images/md.webp" alt="Item Image">
+                        <h3>What is AI code generation?</h3>
+                        <p>AI code generation uses machine learning models to provide context-based code suggestions.</p>
+                        <a href="#">Learn more &gt;</a>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../multimedia/images/md.webp" alt="Item Image">
+                        <h3>AI codeing tools for beginner and expert coders</h3>
+                        <p>How beginner and expert coders use AI coding tools to code faster and ship great software.</p>
+                        <a href="#">Learn more &gt;</a>
+                        
+                    </div>
+                </div> 
+                <!-- <hr> -->
+            </div>
+        </div>
+        <!-- <hr class="section-divider"> -->
+    </section>
+
+    
+    <section class="feature-list-section">
+        <div class="container">
+            <!-- Left Content -->
+            
+            <div class="left-content">
+                
+                <h2>GitHub</h2>
+                <p><b>subscribe to our developer newsletter </b></p>
+                <p>Get tips, technical guides, and best practices. Twice a month. Right in your inbox. </p>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+
+            <!-- Right Content -->
+            <div class="right-content">
+                <div class="flex-list">
+                    <ul>
+                        <li>Product</li>
+                        <li>Features</li>
+                        <li> Enterprise</li>
+                        <li>Copilot</li>
+                        <li> Security</li>
+                        <li> Pricing</li>
+                        <li>Team</li>
+                        <li> Resources<li>
+                        <li>Roadmap</li>
+                        <li>Compare GitHub</li>
+                    </ul>
+                    <ul>
+                        <li>Platform</li>
+                        <li>Developer API</li>
+                        <li>Partners</li>
+                        <li>Education</li>
+                        <li>GitHub CLI</li>
+                        <li>GitHub Desktop</li>
+                        <li> GitHub Mobile</li>
+                       
+                    </ul>
+                    <ul>
+                        <li>Support </li>
+                        <li>Docs</li>
+                        <li>Community Forum</li>
+                        <li>Professional Services</li>
+                        <li>Premium Support</li>
+                        <li>Skills</li>
+                        <li>Status</li>
+                        <li> Contact GitHub</li>
+                        
+                    </ul>
+                    <ul>
+                        <li>Company</li>
+                        <li>  About</li>
+                        <li> Customer stories</li>
+                        <li> Blog</li>
+                        <li>  The ReadME Project</li>
+                        <li> Careers</li>
+                        <li> Newsroom</li>
+                        <li> Inclusion</li>
+                        <li>Social Impact</li>
+                        <li> Shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container1">
+            <div class="footer-content">
+                <div class="flexed-items">
+                    <p>© 2025 GitHub, Inc.
+                     <p>Terms</p>
+                    <p> Privacy (Updated 02/2024)</p>
+                    <p>Sitemap</p>
+                    <p> What is Git?</p>
+                    <p> Manage cookies</p>
+                    <p>  Do not share my personal information</p></p>
+                </div>
+                <div class="social-media">
+                    <a href="#"><img src="../multimedia/icons/link.svg" alt="Linkedin"></a>
+                    <a href="#"><img src="../multimedia/icons/in.svg" alt="Instagram"></a>
+                    <a href="#"><img src="../multimedia/icons/you.svg" alt="Youtube"></a>
+                    <a href="#"><img src="../multimedia/icons/x.svg" alt="Twitter"></a>
+                    <a href="#"><img src="../multimedia/icons/ti.svg" alt="Ticktok"></a>
+                    <a href="#"><img src="../multimedia/icons/me.svg" alt="Message"></a>
+                    <a href="#"><img src="../multimedia/icons/icon github.svg" alt="GitHub"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
